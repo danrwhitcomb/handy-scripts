@@ -3,6 +3,11 @@
 # only put two values per line 
 # representing both sides of a note card
 # press q to exit program
+
+#Example of file data entrys: 
+#poeta -ae,poet
+#bellum -a,war
+
 from time import sleep
 
 setValue = raw_input("Side 1 or 2?  \n")
