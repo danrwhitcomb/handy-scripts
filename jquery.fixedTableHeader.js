@@ -4,7 +4,12 @@ jQuery.fn.extend({
 		$(window).scroll(function(){
 			var $header = $table.find("thead");
 			var offset = $table.offset().top
-			if($(window).scrollTop() > offset){
+			var bottomOffset = offset + $table.height();
+
+			if ($(window).scrollTop() > bottomOffset){
+				$header.css({'position':'static'});
+
+			} else if($(window).scrollTop() > offset){
 				var left = $header.offset().left;
 				$header.css({
 					'position':'fixed',
@@ -12,7 +17,7 @@ jQuery.fn.extend({
 					'left':left
 				});
 			} else {
-				$header.css({'position':'static'})
+				$header.css({'position':'static'});
 			} 
 		})
 	}
